@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+
+   <title>Update</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+</head>
+<body>
+    <div class="container">
+     
+       <div class="col-md-offset-3 col-md-5">
+            <form action="/updateData/{{data.id}}" method="POST" autocomplete="off">
+                 {% csrf_token %}
+                    <h3 class="page-header text-primary text-center">UpdateData</h3>
+                   
+                <div class="form-group">
+                     <label>Product_Name</label>
+                     <input type="text" class="form-control" value="{{data.product_name}}" name="product_name">
+                </div>
+
+                <div class="form-group">
+                  <label>Quantity</label>
+                  <input type="text" class="form-control"  value="{{data.quantity}}" name="quantity">
+                </div>
+
+                <div class="form-group">
+                  <label>Amount</label>
+                  <input type="text" class="form-control" value="{{data.amount}}" name="amount">
+                </div>
+
+                <div class="form-group">
+                    <label>Delivered</label>
+                    <input type="text" class="form-control"  value="{{data.delivered}}" name="delivered">
+                    
+                    
+                </div>
+                <div class="form-group">
+                  <label>Remaining</label>
+                  <input type="text" class="form-control"  value="{{data.remaining}}" name="remaining">
+                  
+               </div>
+             
+        <br/>
+               <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary btn-block" >
+               
+
+               </div>
+           </form>         
+        </div>
+        </div>
+</body>
+</html>
